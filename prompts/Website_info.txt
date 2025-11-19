@@ -1,0 +1,39 @@
+Extract CRITICAL business information from the website URL and be exhaustive with information you find: {URL}
+
+**BUSINESS MODEL EVIDENCE:** 
+- Business model descriptions, be very exhuastive with what you can find.
+
+**PRODUCTS***
+- what type of products are being sold, be very exhuastive with what you can find.
+
+**CUSTOMER TARGETING:**
+- main customers, be very exhuastive with what you can find.
+
+**WEBSITE FINDINGS:**
+- What you were confidently able to locate on the website, be very exhuastive with what you can find.
+
+**DISTRIBUTION FINDINGS:**
+- Summarize any clear, confidently identifiable details from the website about how this company handles distribution (e.g., who they deliever to, delivery methods, logistics partners, fleet info, service area).
+
+**NUMBER OF TRUCKS:**
+- Provide your best estimate of how many trucks the company likely operates.
+
+**PHONE NUMBERS & EMAILS:**
+- what phone numbers and emails are you confidently able to find associated to this website / company
+
+**ADDRESS:**
+- Only if you can confidently locate the main company headquarters, return it in this exact format: COUNTRY, STATE, STREET ADDRESS
+
+**ADDITIONAL FINDINGS:**
+- Any additional information you were able to confidently find
+
+Return findings in this exact format:
+PRODUCTS: [list or "None found"]
+BUSINESS_MODEL: [description or "Not specified"]
+WEBSITE_FINDINGS: [description or "Not specified"]
+TARGET_CUSTOMERS: [list or "None specified"]
+DISTRIBUTION FINDINGS: [description or "Not specified"]
+NUMNBER OF TRUCKS: [integer or "Not Confident"]
+PHONE NUMBERS & EMAILS: [list or "None specified"]
+ADDRESS: [Country, state, street address or "None specified"]
+ADDITIONAL FINDINGS: [description or "Not specified"]

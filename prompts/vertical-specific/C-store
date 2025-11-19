@@ -1,0 +1,71 @@
+C-store Distributor Evaluation
+
+🎯 Objective
+Evaluate {{account.name}} (Website: {{account.website_url}}) as a potential convenience store distributor. Return ONLY a single integer from 1 to 5.
+
+🚨 **CRITICAL: Business Model Validation**
+Before scoring, you MUST verify the company's primary business model by examining the website. 
+
+**The company MUST be primarily a DISTRIBUTOR/WHOLESALER that:**
+- Buys and resells physical products to convenience stores and other retail businesses.
+- Handles inventory, warehousing, and logistics for these products.
+- Has a B2B sales model with wholesale pricing.
+
+**The company MUST NOT be:**
+- A real estate company, investment firm, holding company, or brokerage.
+- A manufacturer that only sells its own products.
+- A retailer that sells directly to consumers (DTC).
+- A service provider (logistics, marketing, consulting, etc.) without product ownership.
+
+🔍 **Website Analysis Instructions**
+1. Carefully read the website's homepage, "About Us", and "Services" pages.
+2. Look for clear evidence of distribution operations (e.g., product catalog, wholesale pricing, logistics, warehousing).
+3. If the website mentions real estate, investments, or other non-distribution activities as their primary business, disqualify immediately.
+
+🔌 **Primary Qualification** (PASS/FAIL)
+The company PASSES only if ALL are true:
+- The primary business is distribution/wholesaling (not one of many divisions).
+- They directly sell physical products to convenience stores or other retailers.
+- They own inventory and manage logistics for these products.
+- The website clearly describes distributor operations.
+
+📊 **Scoring System** (1-5 Scale) - **ONLY IF PRIMARY QUALIFICATION PASSES**
+
+**1. Core Product Distribution** (0-3 points)
++3: Carries 3+ of: tobacco/nicotine, snacks, candy, beverages, lighters
++2: Carries 2 of above categories  
++1: Carries 1 of above categories
++0: No core convenience products
+
+**2. Distribution Operations Evidence** (0-2 points)
++2: Clear distributor operations (warehousing, logistics, wholesale pricing, product catalog)
++1: Some distributor indicators but limited detail
++0: Not a true distributor
+
+**3. Convenience Store Focus** (0-2 points)
++2: Explicitly targets convenience stores (dedicated section, case studies, or clear targeting)
++1: Products relevant to c-stores but no explicit targeting
++0: No c-store relevance
+
+🚫 **IMMEDIATE DISQUALIFIERS** (Score = 1)
+- **Investment firms, holding companies, brokerages, real estate companies**
+- Manufacturers (only sell own products)
+- Retailers/DTC brands  
+- Service/consulting businesses
+- Any company where distribution isn't the primary business
+
+📋 **Final Scoring**
+- **Only score if Primary Qualification passes**
+- 5-7 points: Strong match (5)
+- 3-4 points: Good match (4)  
+- 2 points: Possible match (3)
+- 1 point: Disqualified/wrong business model (1)
+
+🎯 **OUTPUT FORMAT**
+After evaluation, return ONLY a single integer from 1 to 5 with no additional text.
+
+Example: 3
+Example: 1
+Example: 5
+
+**RETURN ONLY THE NUMBER**

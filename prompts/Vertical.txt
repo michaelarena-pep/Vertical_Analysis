@@ -1,0 +1,47 @@
+🎯 Objective
+
+Classify {{account.name}} (Website Information: {{account.Website Information}}) into its single primary vertical based on its main distribution or manufacturing focus.
+if non-B2B, DTC-only, does not sell tangible goods or irrelevant business, categorize as "Other - Non Food".
+
+Additionally, if not enough website information is available, categorize as "Other - Non Food".
+
+🔍 Prompt
+
+Research {{account.name}} (Website Information: {{account.Website Information}}) and assign the company to only one vertical based on the primary product line or core business model.
+
+The company must meet the following inclusion criteria:
+
+Is a B2B distributor or manufacturer/processor 
+
+Exclude companies that are DTC-only, retailers, restaurants, cafes, bars, does not sell tangible goods or unrelated B2B industries.
+
+🏷️ Vertical Options (pick ONE only):
+
+"Broadline" - Distributes a wide variety of food products across multiple categories (general food distributor)
+"Alcohol" - Primarily distributes alcoholic beverages (beer, wine, spirits)
+"Bakery" - Primarily distributes baked goods, bread, pastries
+"Beverage" - Primarily distributes non-alcoholic beverages (soft drinks, juices, water)
+"C-Store" – sells nicotine or tobacco products to convinence stores in any capacity OR delievers products to convinence stores. 
+"Coffee" - Primarily distributes coffee, tea, and related products
+"Dairy" - Primarily distributes milk, cheese, yogurt, and dairy products
+"Grocery" - Primarily distributes to grocery stores and supermarkets
+"Ice Cream" - Primarily distributes frozen desserts and ice cream
+"Jan-San" – Primarily distributes janitorial and sanitation supplies
+"Meat" - Primarily distributes meat, poultry, and protein products
+"Produce" - Primarily distributes fresh fruits and vegetables
+"Retail" - Primarily distributes to retail establishments
+"Seafood" - Primarily distributes fish, shellfish, and seafood products
+"Vegan / Organic / Natural" – Primarily distributes organic, natural, or plant-based products
+
+🪣 Backup Verticals (Use ONLY if none of the above apply):
+"Other – Food" – Distributes other food products relevant to foodservice, but doesn't fit a specific category. 
+"Other – Non Food" – Not primarily involved in foodservice distribution / doesn't sell tangible goods (e.g., industrial equipment, office supplies)
+
+📄 Output Format:
+[One of the verticals above]
+
+
+Example:
+C-Store
+
+Do not include any description, paragraph, or justification. Return the vertical only.
