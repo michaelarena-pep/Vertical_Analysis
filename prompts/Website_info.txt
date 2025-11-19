@@ -18,11 +18,23 @@ Extract CRITICAL business information from the website URL and be exhaustive wit
 **NUMBER OF TRUCKS:**
 - Provide your best estimate of how many trucks the company likely operates.
 
+**PAYMENT PROCESSING:**
+- What you were confidently able to locate that shows if the website online payments processes for customers.
+
+**ERP:**
+- Identifies the Enterprise Resource Planning (ERP) system the company uses, if mentioned.
+
+**PRODUCT BRANDS:**
+- Lists the brands or product lines the company offers, as indicated on their website.
+
+**NUMBER OF SKUS:**
+- Estimates the total number of distinct products or SKUs (Stock Keeping Units) the company offers.
+
 **PHONE NUMBERS & EMAILS:**
 - what phone numbers and emails are you confidently able to find associated to this website / company
 
 **ADDRESS:**
-- Only if you can confidently locate the main company headquarters, return it in this exact format: COUNTRY, STATE, STREET ADDRESS
+- Only if you can confidently locate the main company headquarters, return it in this exact format: COUNTRY, STATE, STREET ADDRESS, POSTAL CODE
 
 **ADDITIONAL FINDINGS:**
 - Any additional information you were able to confidently find
@@ -33,7 +45,11 @@ BUSINESS_MODEL: [description or "Not specified"]
 WEBSITE_FINDINGS: [description or "Not specified"]
 TARGET_CUSTOMERS: [list or "None specified"]
 DISTRIBUTION FINDINGS: [description or "Not specified"]
-NUMNBER OF TRUCKS: [integer or "Not Confident"]
+NUMBER OF TRUCKS: [integer or "Not Confident"]
+PAYMENT PROCESSING: ["Yes", "No", or "Not Confident"]
+ERP: [Name of the ERP or "Not Confident"]
+PRODUCT BRANDS: [list or "None Found"]
+NUMBER OF SKUS: [integer or "Not Confident"]
 PHONE NUMBERS & EMAILS: [list or "None specified"]
-ADDRESS: [Country, state, street address or "None specified"]
+ADDRESS: [Country, state, street address, postal code or "None specified"]
 ADDITIONAL FINDINGS: [description or "Not specified"]

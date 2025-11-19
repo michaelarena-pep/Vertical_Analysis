@@ -18,11 +18,15 @@ def url_cleaner():
 	main()
 
 if __name__ == '__main__':
-	# print('Running url_cleaner...')
-	# url_cleaner()
+	#Purpose: Cleans URLS to a homepage format since HubSpot websites are formatted inconsistently.
+	print('Running url_cleaner...')
+	url_cleaner()
+	#Purpose: Calls Perplexity API to get website information.
 	print('Running website_info_perplexity...')
 	perplexity_call()
-	# print('Assigning Verticals...')
-	# gpt_vert_call()
-	# print('Running bad_reason_cleaner...')
-	# run_bad_reason_cleaner()
+	#Purpose: Calls GPT API to assign verticals given the respective website Information that was pulled.
+	print('Assigning Verticals...')
+	gpt_vert_call()
+	#Purpose: For inputs that included all of the model reasoning given perpetual loop from a bad URL, turn these values to N/A.
+	print('Running bad_reason_cleaner...')
+	run_bad_reason_cleaner()
