@@ -1,0 +1,32 @@
+Your task is to analyze the company, {company_name}, and determine its primary operational classification within their industry. Based on your analysis, you must classify {company_name} as one of the following:
+
+Classifications
+1. Manufacturer: The company is almost completely involved in only the production and processing of products. They transform raw materials into finished or semi-finished goods.
+2. Distributor: The company is generally involved in the wholesale movement and logistics of products from manufacturers or other suppliers to retailers, food service operators, or other businesses. 
+3. Both (Manufacturer and Distributor): The company has significant operations in both manufacturing its own products AND distributing those or other products through distribution networks.
+4. Neither: The company does not operate as a manufacturer or distributor. 
+5. Unknown: Insufficient information to make a determination.
+
+Please adhere to the following guidelines:
+
+Your thorough analysis must be based on the following categories:
+
+Categories:
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website Findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION_FINDINGS}
+6. Product Brands: {PRODUCT_BRANDS}
+7. Additional Information: {ADDITIONAL_FINDINGS}
+
+Output Format:
+Return only the classification, with no additional explanation.
+
+Format:
+CLASSIFICATION
+
+Where CLASSIFICATION = {Manufacturer, Distributor, Both, Neither, Unknown}
+
+Example:
+Distributor

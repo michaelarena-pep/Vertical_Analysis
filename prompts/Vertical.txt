@@ -1,19 +1,22 @@
 🎯 Objective
 
-Classify based off the website information into its single primary vertical based on its main distribution or manufacturing focus.
-if non-B2B, DTC-only, does not sell tangible goods or irrelevant business, categorize as "Other - Non Food".
+Only classify companies that are B2B distributors or manufacturers/processors. 
+Exclude DTC-only companies, retailers, restaurants, cafes, bars, companies that do not sell tangible goods, or unrelated B2B industries. 
+If not enough information is available, categorize as "Other - Non Food".
 
-Additionally, if not enough website information is available, categorize as "Other - Non Food".
+Additionally, if not enough information is available, categorize as "Other - Non Food".
 
 🔍 Prompt
 
-Assign the (Website Information: {INFO}) to only one vertical based on the primary product line or core business model.
+Assign the {company name} to only one vertical based on their primary function using the categories listed below.
 
-The company must meet the following inclusion criteria:
-
-Is a B2B distributor or manufacturer/processor 
-
-Exclude companies that are DTC-only, retailers, restaurants, cafes, bars, does not sell tangible goods or unrelated B2B industries.
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION FINDINGS}
+6. Product Brands: {PRODUCT BRANDS}
+7. Additional Info: {ADDITIONAL FINDINGS}
 
 🏷️ Vertical Options (pick ONE only):
 
@@ -21,11 +24,11 @@ Exclude companies that are DTC-only, retailers, restaurants, cafes, bars, does n
 "Alcohol" - Primarily distributes alcoholic beverages (beer, wine, spirits)
 "Bakery" - Primarily distributes baked goods, bread, pastries
 "Beverage" - Primarily distributes non-alcoholic beverages (soft drinks, juices, water)
-"C-Store" – sells nicotine or tobacco products to convinence stores in any capacity OR delievers products to convinence stores. 
+"C-Store" – sells nicotine or tobacco products to convenience stores in any capacity OR delivers products to convenience stores. 
 "Coffee" - Primarily distributes coffee, tea, and related products
 "Dairy" - Primarily distributes milk, cheese, yogurt, and dairy products
 "Grocery" - Primarily distributes to grocery stores and supermarkets
-"Ice Cream" - Primarily distributes frozen desserts and ice cream
+"Ice Cream" - Primarily distributes frozen foods, desserts and ice cream
 "Jan-San" – Primarily distributes janitorial and sanitation supplies
 "Meat" - Primarily distributes meat, poultry, and protein products
 "Produce" - Primarily distributes fresh fruits and vegetables
@@ -44,4 +47,4 @@ Exclude companies that are DTC-only, retailers, restaurants, cafes, bars, does n
 Example:
 C-Store
 
-Do not include any description, paragraph, or justification. Return the vertical only.
+**Return ONLY one of the verticals above. No description or justification.**

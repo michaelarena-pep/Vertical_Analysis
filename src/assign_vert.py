@@ -73,7 +73,7 @@ def main():
         )
         try:
             result = client.responses.create(
-                model="gpt-5-mini",
+                model="gpt-5",
                 input=prompt,
                 reasoning={"effort": "high"}
             )
