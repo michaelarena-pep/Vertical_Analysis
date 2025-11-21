@@ -31,7 +31,7 @@ async def async_call_perplexity_client(client, prompt_text):
             messages=[{"role": "user", "content": prompt_text}],
             model="sonar-reasoning",
             reasoning_effort="high",
-            max_tokens=4500
+            max_tokens=5000
         )
         if hasattr(completion, 'choices') and completion.choices:
             return completion.choices[0].message.content

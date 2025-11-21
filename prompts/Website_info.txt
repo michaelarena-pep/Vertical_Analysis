@@ -25,7 +25,7 @@ Extract CRITICAL business information from the website URL and be exhaustive wit
 - Identifies the Enterprise Resource Planning (ERP) system the company uses, if mentioned.
 
 **PRODUCT BRANDS:**
-- Lists the brands or product lines the company offers, as indicated on their website.
+- Summarize any clear, confidently identifiable details from the website about the brands or product lines the company offers.
 
 **NUMBER OF SKUS:**
 - Estimates the total number of distinct products or SKUs (Stock Keeping Units) the company offers.

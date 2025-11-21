@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 def main():
-    # Load environment variables
+
     load_dotenv()
     OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
@@ -23,7 +23,7 @@ def main():
     with open(PROMPT_PATH, 'r', encoding='utf-8') as f:
         prompt_template = f.read()
 
-    # Read all rows
+
     with open(INPUT_CSV, newline='', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames or []

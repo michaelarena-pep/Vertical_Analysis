@@ -1,13 +1,13 @@
 🎯 Objective
 
-Classify {{account.name}} (Website Information: {{account.Website Information}}) into its single primary vertical based on its main distribution or manufacturing focus.
+Classify based off the website information into its single primary vertical based on its main distribution or manufacturing focus.
 if non-B2B, DTC-only, does not sell tangible goods or irrelevant business, categorize as "Other - Non Food".
 
 Additionally, if not enough website information is available, categorize as "Other - Non Food".
 
 🔍 Prompt
 
-Research {{account.name}} (Website Information: {{account.Website Information}}) and assign the company to only one vertical based on the primary product line or core business model.
+Assign the (Website Information: {INFO}) to only one vertical based on the primary product line or core business model.
 
 The company must meet the following inclusion criteria:
 
