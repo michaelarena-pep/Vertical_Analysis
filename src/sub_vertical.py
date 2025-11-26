@@ -12,7 +12,7 @@ from openai import AsyncOpenAI
 # ------------------------
 load_dotenv()
 
-INPUT_CSV = os.getenv('INPUT_CSV', 'data/Website_comp_info_company_type_v2.csv')
+INPUT_CSV = os.getenv('INPUT_CSV', 'data/Website_comp_info_company_type.csv')
 PROMPTS_DIR = os.getenv('PROMPTS_DIR', 'prompts/sub-verticals')
 SUB_VERTICAL_COL = os.getenv('SUB_VERTICAL_COL', 'Sub Vertical')
 COMPANY_COL = os.getenv('COMPANY_COL', 'Company name')
