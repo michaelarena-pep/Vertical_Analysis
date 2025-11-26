@@ -1,6 +1,6 @@
 🎯 Objective
 
-Classify companies in the Meat vertical into their respective sub-verticals. 
+Classify companies in the Meat vertical into their respective sub-verticals based off of their primary business function. 
 If not enough information is available or none of the subverticals are applicable, categorize as "Other".
 
 🔍 Prompt

@@ -82,8 +82,8 @@ async def main_async():
         "Beverage": "beverage.txt",
         "Broadline": "Broadline.txt",
         "C-Store": "c-store.txt",
-        "Ice-cream": "Ice-cream.txt",
-        "Jan-san": "Jan-san.txt",
+        "Ice Cream": "Ice-cream.txt",
+        "Jan-San": "Jan-san.txt",
         "Meat": "meat.txt",
         "Produce": "produce.txt",
         "Seafood": "seafood.txt"
@@ -115,7 +115,7 @@ async def main_async():
     # Allowed verticals (only process rows whose Vertical is in this set)
     ALLOWED_VERTICALS = {
         "Alcohol", "Bakery", "Beverage", "Broadline", "C-Store",
-        "Ice-cream", "Jan-san", "Meat", "Produce", "Seafood"
+        "Ice Cream", "Jan-San", "Meat", "Produce", "Seafood"
     }
 
     # Prepare rows to process
