@@ -3,7 +3,7 @@ Your task is to analyze the company, {company_name}, and determine its primary o
 Classifications
 1. Manufacturer: The company is almost completely involved in only the production and processing of products. They transform raw materials into finished or semi-finished goods.
 2. Distributor: The company is generally involved in the wholesale movement and logistics of products from manufacturers or other suppliers to retailers, food service operators, or other businesses. 
-3. Both (Manufacturer and Distributor): The company has significant operations in both manufacturing its own products AND distributing those or other products through distribution networks.
+3. Both (Manufacturer and Distributor): The company manufactures its own products and also engages in regular, strategic distribution through its own channels, even if it isn’t the main revenue source.
 4. Neither: The company does not operate as a manufacturer or distributor. 
 5. Unknown: Insufficient information to make a determination.
 
@@ -13,12 +13,9 @@ Your thorough analysis must be based on the following categories:
 
 Categories:
 1. Business Model: {BUSINESS_MODEL}
-2. Products: {PRODUCTS}
-3. Website Findings: {WEBSITE_FINDINGS}
-4. Target Customers: {TARGET_CUSTOMERS}
-5. Distributor Findings: {DISTRIBUTION_FINDINGS}
-6. Product Brands: {PRODUCT_BRANDS}
-7. Additional Information: {ADDITIONAL_FINDINGS}
+2. Website Findings: {WEBSITE_FINDINGS}
+3. Target Customers: {TARGET_CUSTOMERS}
+4. Distributor Findings: {DISTRIBUTION_FINDINGS}
 
 Output Format:
 Return only the classification, with no additional explanation.

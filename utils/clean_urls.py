@@ -6,8 +6,8 @@ import csv
 import pathlib
 from urllib.parse import urlparse
 
-INPUT_CSV = 'data/Unknown Vert.csv'
-OUTPUT_CSV = 'data/cleaned_url_unknown_vert.csv'
+INPUT_CSV = 'data/known Vert.csv'
+OUTPUT_CSV = 'data/cleaned_url_known_vert.csv'
 URL_COL = 'Website URL'
 KEEP_COLS = ['Record ID', 'Company name', 'Website URL']
 

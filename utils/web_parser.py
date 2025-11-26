@@ -2,8 +2,8 @@ import csv
 import pathlib
 import re
 
-INPUT_CSV = 'data/Website_comp_info.csv'
-OUTPUT_CSV = 'data/Website_comp_info_parsed.csv'
+INPUT_CSV = 'data/Website_comp_info_known_vert_v2.csv'
+OUTPUT_CSV = 'data/Website_comp_info_parsed_v2.csv'
 INFO_COL = 'Website Information'
 
 # List of categories to extract

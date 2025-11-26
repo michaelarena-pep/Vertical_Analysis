@@ -1,7 +1,7 @@
 import csv
 csv.field_size_limit(10**7)
 
-INPUT_CSV = 'data/Website_comp_info.csv'
+INPUT_CSV = 'data/Website_comp_info_known_vert_v2.csv'
 COLUMN = 'Website Information'
 THRESHOLD = 7500
 

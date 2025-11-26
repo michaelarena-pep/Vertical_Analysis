@@ -15,8 +15,7 @@ Assign the {company name} to only one vertical based on their primary function u
 3. Website findings: {WEBSITE_FINDINGS}
 4. Target Customers: {TARGET_CUSTOMERS}
 5. Distributor Findings: {DISTRIBUTION FINDINGS}
-6. Product Brands: {PRODUCT BRANDS}
-7. Additional Info: {ADDITIONAL FINDINGS}
+6. Additional Info: {ADDITIONAL FINDINGS}
 
 🏷️ Vertical Options (pick ONE only):
 

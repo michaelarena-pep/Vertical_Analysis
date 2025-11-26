@@ -1,0 +1,31 @@
+🎯 Objective
+
+Classify companies in the Bakery vertical into their respective sub-verticals based off of their primary business function. 
+If not enough information is available or none of the subverticals are applicable, categorize as "Other".
+
+🔍 Prompt
+
+Assign the {company name} to only one sub-vertical based on their primary function using the categories listed below.
+
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION FINDINGS}
+6. Additional Info: {ADDITIONAL FINDINGS}
+
+🏷️ Sub-Vertical Options (pick ONE only):
+
+"Foodservice Distributors" - Primarily supplys restaurants, hotels, institutions, and other food‑away‑from‑home operators.
+"DSD" - Primarily does direct‑store‑delivery replenishing retail shelves from proprietary trucks.
+
+🪣 Backup Sub-Vertical (Use ONLY if none of the above apply or not enough information):
+"Other"
+
+📄 Output Format:
+[One sub-vertical name]
+
+Example:
+Foodservice Distributors
+
+**Return ONLY one of the sub-verticals above. Do NOT include any description or justification.**

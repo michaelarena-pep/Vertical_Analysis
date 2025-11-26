@@ -1,0 +1,33 @@
+🎯 Objective
+
+Classify companies in the Broadline vertical into their respective sub-verticals. 
+If not enough information is available or none of the subverticals are applicable, categorize as "Other".
+
+🔍 Prompt
+
+Assign the {company name} to only one sub-vertical based on their primary function using the categories listed below.
+
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION FINDINGS}
+6. Additional Info: {ADDITIONAL FINDINGS}
+
+🏷️ Sub-Vertical Options (pick ONE only):
+
+"Foodservice Distributors" - Primarily supply restaurants, hotels, institutions, and other food-away-from-home operators.
+"Specialty Distributors" - Focus on niche, gourmet, ethnic, or otherwise specialized products; specialty positioning must be a primary part of operations.
+"Re-distributors/Aggregators" - Purchase in truckload quantities from manufacturers and resell split cases/mixed loads to other distributors only (not operators).
+"Cash-and-Carry" - Warehouse-style outlet where customers buy onsite and transport goods themselves; typically no delivery.
+
+🪣 Backup Sub-Vertical (Use ONLY if none of the above apply or not enough information):
+"Other"
+
+📄 Output Format:
+[One sub-vertical name]
+
+Example:
+Specialty Distributors
+
+**Return ONLY one of the sub-verticals above. Do NOT include any description or justification.**

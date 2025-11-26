@@ -1,0 +1,34 @@
+🎯 Objective
+
+Classify companies in the Seafood vertical into their respective sub-verticals. 
+If not enough information is available or none of the subverticals are applicable, categorize as "Other".
+
+🔍 Prompt
+
+Assign the {company name} to only one sub-vertical based on their primary function using the categories listed below.
+
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION FINDINGS}
+6. Additional Info: {ADDITIONAL FINDINGS}
+
+🏷️ Sub-Vertical Options (pick ONE only):
+
+"Foodservice Distributors" - Primarily supply restaurants, hotels, institutions, and other food-away-from-home operators.
+"Offloaders" - Seafood companies located at ports that offload catch from vessels and wholesale it inland.
+"Retail Distributors" - Core customers are grocery, mass, club, or convenience retailers rather than foodservice.
+"Processors" - Companies that primarily convert raw product into portion‑controlled, value‑added, or ready‑to‑cook items before distribution.
+"Farmers" - Aquaculture or capture‑fishery operators that market product directly into wholesale channels.
+
+🪣 Backup Sub-Vertical (Use ONLY if none of the above apply or not enough information):
+"Other"
+
+📄 Output Format:
+[One sub-vertical name]
+
+Example:
+Foodservice Distributors
+
+**Return ONLY one of the sub-verticals above. Do NOT include any description or justification.**

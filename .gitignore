@@ -10,3 +10,5 @@ __pycache__/
 /prompts/vertical-specific-scoring/
 Website_comp_info.csv
 notes.txt
+/copies/
+Website_comp_info_known_vert_v2.csv

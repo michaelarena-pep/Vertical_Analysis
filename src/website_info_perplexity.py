@@ -15,8 +15,8 @@ csv.field_size_limit(10**7)  # adjust if needed
 
 load_dotenv()
 
-INPUT_CSV = 'data/cleaned_url_unknown_vert.csv'
-OUTPUT_CSV = 'data/Website_comp_info.csv'
+INPUT_CSV = 'data/cleaned_url_known_vert.csv'
+OUTPUT_CSV = 'data/Website_comp_info_known_vert_v2.csv'
 PROMPT_PATH = 'prompts/Website_info.txt'
 URL_COL = 'Website URL'
 RESULT_COL = 'Website Information'
@@ -92,6 +92,24 @@ def main():
                     writer.writerows(rows)
                 print(f'Progress saved after row {idx+1}/{len(rows)}')
 
+        blocklist = [
+            "https://www.facebook.com",
+            "https://sysco.com",
+            "https://N",
+            "https://business.site",
+            "https://square.site",
+            "https://hub.biz",
+            "http://www.facebook.com",
+            "https://weebly.com",
+            "http://sysco.com",
+            "http://business.site",
+            "http://square.site",
+            "http://N",
+            "http://hub.biz",
+            "https://linkedin.com",
+            "http://linkedin.com"
+
+        ]
         async with AsyncPerplexity(http_client=DefaultAioHttpClient()) as client:
             tasks = []
             for idx, row in enumerate(rows):
@@ -104,6 +122,10 @@ def main():
                 # Skip rows without URL
                 if not url:
                     print(f"[{idx+1}/{len(rows)}] (no URL) skipped")
+                    continue
+                # Skip rows in blocklist
+                if url in blocklist:
+                    print(f"[{idx+1}/{len(rows)}] {url}: SKIPPED (blocklist)")
                     continue
                 # Build prompt
                 if '{URL}' in prompt_template:

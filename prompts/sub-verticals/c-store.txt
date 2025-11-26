@@ -1,0 +1,33 @@
+🎯 Objective
+
+Classify companies in the C-Store vertical into their respective sub-verticals. 
+If not enough information is available or none of the subverticals are applicable, categorize as "Other".
+
+🔍 Prompt
+
+Assign the {company name} to only one sub-vertical based on their primary function using the categories listed below.
+
+1. Business Model: {BUSINESS_MODEL}
+2. Products: {PRODUCTS}
+3. Website findings: {WEBSITE_FINDINGS}
+4. Target Customers: {TARGET_CUSTOMERS}
+5. Distributor Findings: {DISTRIBUTION FINDINGS}
+6. Additional Info: {ADDITIONAL FINDINGS}
+
+🏷️ Sub-Vertical Options (pick ONE only):
+
+"Food and Snack Distributors" - Distributors that primarily supply convenience stores with snacks, premade foods, or other food items.
+"Tobacco Distributors" - Convenience‑oriented distributors with a high mix of cigarettes, smoking paraphernalia, smokeless, vaping, and alternative nicotine.
+"Alcohol Distributors" - Distributors primarily supplying alcohol to convenience stores.
+"Fuel/Oil Distributors" - Distributors that primarily supply convenience stores with oil, gasoline, or Petroleum.
+
+🪣 Backup Sub-Vertical (Use ONLY if none of the above apply or not enough information):
+"Other"
+
+📄 Output Format:
+[One sub-vertical name]
+
+Example:
+Tobacco Distributors
+
+**Return ONLY one of the sub-verticals above. Do NOT include any description or justification.**
