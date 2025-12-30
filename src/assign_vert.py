@@ -8,23 +8,43 @@ from openai import AsyncOpenAI
 
 load_dotenv()
 
-INPUT_CSV = 'data/Website_comp_info_company_type_v2.csv'
+INPUT_CSV = 'data/net_new_web_info_company_type_parsed.csv'
 PROMPT_PATH = 'prompts/Vertical.txt'
 INFO_COL = 'Website Information'
 VERTICAL_COL = 'Vertical'
-COMPANY_COL = 'Company name'
+COMPANY_COL = 'COMPANY_NAME'
+URL_COL = 'URL'
 CONCURRENCY = 10
 REQUEST_TIMEOUT = 45
+MAX_RETRIES = 3  # Number of retry attempts
 
-async def classify_vertical(client, model, prompt):
-    try:
-        coro = client.responses.create(model=model, input=prompt, reasoning={"effort": "high"})
-        result = await asyncio.wait_for(coro, timeout=REQUEST_TIMEOUT)
-        return (getattr(result, "output_text", None) or str(result)).strip()
-    except asyncio.TimeoutError:
-        return "ERROR: timeout"
-    except Exception as e:
-        return f"ERROR: {e}"
+async def classify_vertical(client, model, prompt, company_name=""):
+    """Classify with automatic retries on failure."""
+    last_error = None
+    
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            coro = client.responses.create(model=model, input=prompt, reasoning={"effort": "high"})
+            result = await asyncio.wait_for(coro, timeout=REQUEST_TIMEOUT)
+            return (getattr(result, "output_text", None) or str(result)).strip()
+        
+        except asyncio.TimeoutError as e:
+            last_error = e
+            print(f"  ⚠️  Timeout on attempt {attempt}/{MAX_RETRIES} for {company_name}")
+            if attempt < MAX_RETRIES:
+                backoff = 2 ** (attempt - 1)  # 1s, 2s, 4s
+                await asyncio.sleep(backoff)
+        
+        except Exception as e:
+            last_error = e
+            print(f"  ⚠️  Error on attempt {attempt}/{MAX_RETRIES} for {company_name}: {type(e).__name__}: {e}")
+            if attempt < MAX_RETRIES:
+                backoff = 2 ** (attempt - 1)
+                await asyncio.sleep(backoff)
+    
+    # All retries exhausted
+    error_type = type(last_error).__name__ if last_error else "Unknown"
+    return f"ERROR after {MAX_RETRIES} attempts: {error_type}: {last_error}"
 
 async def main_async():
     api_key = os.getenv("OPENAI_API_KEY")
@@ -61,6 +81,7 @@ async def main_async():
     print(f"{len(rows_to_process)} rows will be processed (not skipped).")
 
     SEMAPHORE = asyncio.Semaphore(CONCURRENCY)
+    file_lock = asyncio.Lock()  # Add lock for thread-safe file writing
 
     async def process_row(row, idx):
         business_model = row.get('BUSINESS_MODEL', '').strip()
@@ -79,23 +100,26 @@ async def main_async():
         prompt = prompt.replace('{DISTRIBUTION FINDINGS}', distribution_findings)
         prompt = prompt.replace('{ADDITIONAL FINDINGS}', additional_info)
 
-        output = await classify_vertical(client, model, prompt)
+        company_name = row.get(COMPANY_COL, '').strip()
+        output = await classify_vertical(client, model, prompt, company_name)
         row[VERTICAL_COL] = output
         print(f"[{idx+1}/{len(rows_to_process)}] {row.get(COMPANY_COL,'')}: {output[:120]}")
+        
         # Save progress after each result
-        # Merge this row into the full rows list and save
-        cname = row.get(COMPANY_COL, '').strip()
-        for r in rows:
-            if r.get(COMPANY_COL, '').strip() == cname:
-                r[VERTICAL_COL] = output
-                break
-        tmp_fd, tmp_path = tempfile.mkstemp(prefix='tmp_', suffix='.csv', dir=str(pathlib.Path(INPUT_CSV).parent))
-        os.close(tmp_fd)
-        with open(tmp_path, 'w', newline='', encoding='utf-8') as f:
-            writer = csv.DictWriter(f, fieldnames=fieldnames)
-            writer.writeheader()
-            writer.writerows(rows)
-        os.replace(tmp_path, INPUT_CSV)
+        # Use URL as unique identifier instead of company name
+        url = row.get(URL_COL, '').strip()
+        async with file_lock:  # Protect file writes from concurrent access
+            for r in rows:
+                if r.get(URL_COL, '').strip() == url:
+                    r[VERTICAL_COL] = output
+                    break
+            tmp_fd, tmp_path = tempfile.mkstemp(prefix='tmp_', suffix='.csv', dir=str(pathlib.Path(INPUT_CSV).parent))
+            os.close(tmp_fd)
+            with open(tmp_path, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerows(rows)
+            os.replace(tmp_path, INPUT_CSV)
         return row
 
     async def sem_task(row, idx):
@@ -106,12 +130,12 @@ async def main_async():
     gathered = await asyncio.gather(*tasks, return_exceptions=True)
 
     # Merge results back into original row list
-    processed_map = {r.get(COMPANY_COL, '').strip(): r for r in gathered if isinstance(r, dict)}
+    processed_map = {r.get(URL_COL, '').strip(): r for r in gathered if isinstance(r, dict)}
     final_rows = []
     for row in rows:
-        cname = row.get(COMPANY_COL, '').strip()
-        if cname in processed_map:
-            final_rows.append(processed_map[cname])
+        url = row.get(URL_COL, '').strip()
+        if url in processed_map:
+            final_rows.append(processed_map[url])
         else:
             final_rows.append(row)
 

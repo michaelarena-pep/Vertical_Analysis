@@ -1,5 +1,8 @@
 Extract CRITICAL business information from the website URL and be exhaustive with information you find: {URL}
 
+**Company Name:** 
+- What you could potentially determine as the company’s name based on the URL.
+
 **BUSINESS MODEL EVIDENCE:** 
 - Business model descriptions, be very exhuastive with what you can find.
 
@@ -40,6 +43,7 @@ Extract CRITICAL business information from the website URL and be exhaustive wit
 - Any additional information you were able to confidently find
 
 Return findings in this exact format:
+COMPANY_NAME: [Company Name or "None found"]
 PRODUCTS: [list or "None found"]
 BUSINESS_MODEL: [description or "Not specified"]
 WEBSITE_FINDINGS: [description or "Not specified"]

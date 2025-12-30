@@ -2,12 +2,13 @@ import csv
 import pathlib
 import re
 
-INPUT_CSV = 'data/Website_comp_info_known_vert_v2.csv'
-OUTPUT_CSV = 'data/Website_comp_info_parsed_v2.csv'
+INPUT_CSV = 'data/SERP_net_new_web_info.csv'
+OUTPUT_CSV = 'data/SERP_net_new_web_info_parsed.csv'
 INFO_COL = 'Website Information'
 
 # List of categories to extract
 CATEGORIES = [
+    'COMPANY_NAME',
     'PRODUCTS',
     'BUSINESS_MODEL',
     'WEBSITE_FINDINGS',

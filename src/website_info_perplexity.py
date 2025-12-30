@@ -15,10 +15,10 @@ csv.field_size_limit(10**7)  # adjust if needed
 
 load_dotenv()
 
-INPUT_CSV = 'data/cleaned_url_known_vert.csv'
-OUTPUT_CSV = 'data/Website_comp_info_known_vert_v2.csv'
+INPUT_CSV = 'data/net_new.csv'
+OUTPUT_CSV = 'data/net_new_web_info.csv'
 PROMPT_PATH = 'prompts/Website_info.txt'
-URL_COL = 'Website URL'
+URL_COL = 'URL'
 RESULT_COL = 'Website Information'
 
 def load_prompt(path):
@@ -29,7 +29,7 @@ async def async_call_perplexity_client(client, prompt_text):
     try:
         completion = await client.chat.completions.create(
             messages=[{"role": "user", "content": prompt_text}],
-            model="sonar-reasoning",
+            model="sonar-pro",
             reasoning_effort="high",
             max_tokens=5000
         )
