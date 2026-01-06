@@ -43,29 +43,29 @@ def vertical_score_all():
 
 if __name__ == '__main__':
 	# Purpose: Cleans URLS to a homepage format since HubSpot websites are formatted inconsistently.
-	# print('Running url_cleaner...')
-	# url_cleaner()
-	# # Purpose: Calls Perplexity API to get website information.
-	# print('Running website_info_perplexity...')
-	# perplexity_call()
-	# # # # Purpose: For inputs that included all of the model reasoning given perpetual loop from a bad URL, turn these values to N/A.
-	# print('Running bad_reason_cleaner...')
-	# run_bad_reason_cleaner()
-	# # # # Purpose: Parse Website info for explicit categories.
-	# print('Parsing Website Information...')
-	# web_info_parser()
-	# # # Purpose: Calls GPT API to assign company type given the respective website Information that was pulled.
-	# print('Assigning Company Type...')
-	# comp_type_classifier()
-	# # Purpose: Calls GPT API to assign verticals given the respective website Information that was pulled.
+	print('Running url_cleaner...')
+	url_cleaner()
+	# Purpose: Calls Perplexity API to get website information.
+	print('Running website_info_perplexity...')
+	perplexity_call()
+	# Purpose: For inputs that included all of the model reasoning given perpetual loop from a bad URL, turn these values to N/A.
+	print('Running bad_reason_cleaner...')
+	run_bad_reason_cleaner()
+	# Purpose: Parse Website info for explicit categories.
+	print('Parsing Website Information...')
+	web_info_parser()
+	# Purpose: Calls GPT API to assign company type given the respective website Information that was pulled.
+	print('Assigning Company Type...')
+	comp_type_classifier()
+	# Purpose: Calls GPT API to assign verticals given the respective website Information that was pulled.
 	print('Assigning Verticals...')
 	gpt_vert_call()
-	# # # Purpose: Calls GPT API to assign sub-verticals given the respective website Information that was pulled.
-	# # print('Assigning Sub-Verticals...')
-	# # sub_vertical_classifier()
-	# # # Purpose: Clean Error Requests
-	# # print('Cleaning Sub-Verticals...')
-	# # clear_error_sub_vertical()
-	# # purpose: Test Scoring for a single vertical.
+	# Purpose: Calls GPT API to assign sub-verticals given the respective website Information that was pulled.
+	print('Assigning Sub-Verticals...')
+	sub_vertical_classifier()
+	# Purpose: Clean Error Requests
+	print('Cleaning Sub-Verticals...')
+	clear_error_sub_vertical()
+	# purpose: Test Scoring for a single vertical.
 	print('Running scoring for all verticals...')
 	vertical_score_all()
