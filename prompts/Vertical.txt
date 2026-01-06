@@ -26,6 +26,7 @@ Assign the {company name} to only one vertical based on their primary function u
 "C-Store" – sells nicotine or tobacco products to convenience stores in any capacity OR delivers products to convenience stores. 
 "Coffee" - Primarily distributes coffee, tea, and related products
 "Dairy" - Primarily distributes milk, cheese, yogurt, and dairy products
+"Floral" – Primarily distributes fresh-cut flowers, greens, foliage, plants, and floral supplies to florists, designers, retailers, grocery stores, and other B2B floral buyers
 "Grocery" - Primarily distributes to grocery stores and supermarkets
 "Ice Cream" - Primarily distributes frozen foods, desserts and ice cream
 "Jan-San" – Primarily distributes janitorial and sanitation supplies

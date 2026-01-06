@@ -1,0 +1,73 @@
+🎯 Objective
+Evaluate {company_name} as a potential distributor only using the **Website Information Analysis** provided below. Return ONLY a single integer from 1 to 5.
+
+🚨 **CRITICAL: Business Model Validation**
+Before scoring, you MUST verify the company does last mile distribution in some capacity using the website information below.
+
+**The company MUST be a DISTRIBUTOR/WHOLESALER in some capacity:**
+- DISTRIBUTOR/WHOLESALER selling physical products
+- Handles inventory, warehousing, logistics
+- Last-mile delivery to convenience stores in some capacity
+
+**The company MUST NOT be:**
+- A real estate company, investment firm, holding company, or brokerage.
+- A retailer that sells directly to consumers (DTC).
+- A service provider (logistics, marketing, consulting, etc.) without product ownership.
+
+🔍 **Website Information Analysis**
+Using the provided website information, analyze:
+1. Business Model: {BUSINESS_MODEL} 
+2. Website Findings: {WEBSITE_FINDINGS}
+3. Target Customers: {TARGET_CUSTOMERS}
+4. Distributor Findings: {DISTRIBUTION_FINDINGS}
+
+🔌 **Primary Qualification** (PASS/FAIL)
+The company PASSES only if ALL are true:
+- The company conducts distribution/wholesale operations (does not have to be the primary business)
+- They own inventory and manage logistics for these products
+- They serve one or more convinence stores
+
+📊 **Scoring System** (1-5 Scale) - **ONLY IF PRIMARY QUALIFICATION PASSES**
+
+**1. Core Product Distribution** (0-2 points)
++2: Carries 3+ of: tobacco/nicotine, snacks, candy, beverages, lighters
++1: Carries 2 of above categories  
+
+**2. Distribution Operations Evidence** (0-2 points)
++2: Clear distributor operations (warehousing, logistics, wholesale pricing, product catalog)
++1: Some distributor indicators but limited detail
++0: Not a true distributor
+
+**2. Manufacturing Operations Evidence** (-1 - 0 points)
+-1: Clear Evidence of Manufacturing operations 
+
+**3. Convenience Store Focus** (0-2 points)
++2: Explicitly targets convenience stores (dedicated section, case studies, or clear targeting)
++1: Products relevant to c-stores but no explicit targeting
++0: No c-store relevance
+
+🚫 **IMMEDIATE DISQUALIFIERS** (Score = 1)
+- **Investment firms, holding companies, brokerages, real estate companies**
+- **Offering any technology products**
+- Retailers/DTC brands  
+- Service/consulting businesses
+- The company does not conduct any distribution/wholesale operations
+- petroleum business
+- Oil Businesses
+- Industrial Equipment
+
+📋 **Final Scoring**
+- **Only score if Primary Qualification passes**
+- 5-7 points: Strong match (5)
+- 3-4 points: Good match (4)  
+- 2 points: Possible match (3)
+- 1 point: Disqualified/wrong business model (1)
+
+🎯 **OUTPUT FORMAT**
+After evaluation, return ONLY a single integer from 1 to 5 with no additional text.
+
+Example: 3
+Example: 1
+Example: 5
+
+**RETURN ONLY THE NUMBER**

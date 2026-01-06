@@ -1,11 +1,16 @@
 Your task is to analyze the company, {company_name}, and determine its primary operational classification within their industry. Based on your analysis, you must classify {company_name} as one of the following:
 
 Classifications
-1. Manufacturer: The company is almost completely involved in only the production and processing of products. They transform raw materials into finished or semi-finished goods.
-2. Distributor: The company is generally involved in the wholesale movement and logistics of products from manufacturers or other suppliers to retailers, food service operators, or other businesses. 
-3. Both (Manufacturer and Distributor): The company manufactures its own products and also engages in regular, strategic distribution through its own channels, even if it isn’t the main revenue source.
+1. Manufacturer: The company produces and processes products, transforming raw materials into finished or semi-finished goods, and does NOT engage in significant distribution activities beyond selling to immediate customers.
+2. Distributor: The company is generally involved in the wholesale movement and logistics of products from manufacturers or other suppliers to retailers, food service operators, or other businesses, and does NOT manufacture products themselves.
+3. Both (Manufacturer and Distributor): The company BOTH manufactures its own products AND operates distribution channels (such as warehouses, logistics networks, or wholesale operations) to move products to retailers or end customers. This applies even if distribution is not the primary revenue source.
 4. Neither: The company does not operate as a manufacturer or distributor. 
 5. Unknown: Insufficient information to make a determination.
+
+Classification Priority:
+- If the company manufactures AND has any distribution operations (warehousing, wholesale, logistics to retailers), classify as "Both"
+- Only classify as "Manufacturer" if there is NO evidence of distribution activities beyond direct sales
+- Only classify as "Distributor" if there is NO evidence of manufacturing activities
 
 Please adhere to the following guidelines:
 

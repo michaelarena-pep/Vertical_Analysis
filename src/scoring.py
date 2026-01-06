@@ -55,6 +55,7 @@ VERTICAL_PROMPT_MAP = {
         "C-store": "C-store.txt",
         "Coffee": "coffee.txt",
         "Dairy": "dairy.txt",
+        "Floral": "floral.txt",
         "Grocery": "Grocery.txt",
         "Ice-cream": "ice-cream.txt",
         "Jan-san": "jan-san.txt",

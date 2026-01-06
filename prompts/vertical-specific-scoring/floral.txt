@@ -1,0 +1,72 @@
+🎯 **Objective**
+Evaluate {company_name} as a potential distributor only using the Website Information Analysis provided below. Return ONLY a single integer from 1 to 5.
+
+🚨 **CRITICAL: Business Model Validation**
+Before scoring, you MUST verify the company does last mile distribution to floral professionals or retail floral buyers in some capacity using the website information below.
+
+**The company MUST be a DISTRIBUTOR/WHOLESALER in some capacity:**
+- DISTRIBUTOR/WHOLESALER selling physical floral products to B2B customers
+- Handles inventory, warehousing, logistics
+- Last-mile delivery to florists, floral designers, retailers, grocery stores, or other B2B floral buyers in some capacity
+
+**The company MUST NOT be:**
+- A real estate company, investment firm, holding company, or brokerage
+- A retailer that sells directly to consumers (DTC)
+- A service provider (logistics, marketing, consulting, etc.) without product ownership
+- Selling technology
+
+🔍 **Website Information Analysis**
+Using the provided website information, analyze:
+1. Business Model: {BUSINESS_MODEL} 
+2. Website Findings: {WEBSITE_FINDINGS}
+3. Target Customers: {TARGET_CUSTOMERS}
+4. Distributor Findings: {DISTRIBUTION_FINDINGS}
+
+🔌 **Primary Qualification** (PASS/FAIL)
+The company PASSES only if ALL are true:
+- The company conducts distribution/wholesale operations (does not have to be the primary business)
+- They own inventory and manage logistics for these products
+- They serve one or more of the following: floral professionals, florists, retailers, grocery stores, event companies, or other B2B floral buyers
+
+📊 **Scoring System** (1-5 Scale) - **ONLY IF PRIMARY QUALIFICATION PASSES**
+
+**1. Distribution Operations Evidence** (0-2 points)
++2: Clear distributor operations (warehousing, cold storage, logistics, wholesale pricing, floral product catalog, last-mile delivery to retail or floral professionals)
++1: Some distributor indicators but limited detail
++0: Not a true distributor
+
+**2. Manufacturing Operations Evidence** (-1 - 0 points)
+-1: Clear Evidence of growing or Manufacturing operations
+
+**3. Foodservice Operator Focus** (0-2 points)
++2: Explicitly targets floral professionals/retailers/grocery stores (dedicated sections, case studies, or clear targeting of florists, retail, events, grocery, etc.)
++1: Products relevant to floral professionals/retailers/grocery stores but no explicit targeting
++0: No floral professional relevance
+
+**4. Product Range** (0-1 points)
++1: Wide range of products (cut flowers, greens, foliage, plants, floral supplies; multiple categories)
++0: Limited product range
+-2: Product focus is on a single floral item or crop (ex - roses, orchids)
+
+🚫 **IMMEDIATE DISQUALIFIERS** (Score = 1)
+- **Investment firms, holding companies, brokerages, real estate companies**
+- **Retailers/DTC brands**
+- **Service/consulting businesses**
+- The company does not conduct any distribution/wholesale operations
+- Does not serve foodservice operators (restaurants, schools, hotels, grocery, etc.)
+
+📋 **Final Scoring**
+- **Only score if Primary Qualification passes**
+- 4-5 points: Strong match (5)
+- 3 points: Good match (4)
+- 2 points: Possible match (3)
+- 1 point: Disqualified/wrong business model (1)
+
+🎯 **OUTPUT FORMAT**
+After evaluation, return ONLY a single integer from 1 to 5 with no additional text.
+
+Example: 3
+Example: 1
+Example: 5
+
+**RETURN ONLY THE NUMBER**

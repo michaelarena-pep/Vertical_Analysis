@@ -2,8 +2,8 @@ import csv
 import pathlib
 import re
 
-INPUT_CSV = 'data/SERP_net_new_web_info.csv'
-OUTPUT_CSV = 'data/SERP_net_new_web_info_parsed.csv'
+INPUT_CSV = 'data/net_new_web_info.csv'
+OUTPUT_CSV = 'data/net_new_web_info_parsed.csv'
 INFO_COL = 'Website Information'
 
 # List of categories to extract
